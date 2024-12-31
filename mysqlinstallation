@@ -3,18 +3,19 @@ USERID=$(id -u)
 if [$USERID -ne 0] 
 then
 echo "Display :Root id  Failure"
+exit 1
 else
 echo "Display :Root id  Sucess"
-exit 1
 fi
 
 dnf install mysql -y
 if [$? -ne 0] 
 then
 echo "Display :Mysql  installation Failure"
+exit 1
 else
 echo "Display :Mysql installation Sucess"
-exit 1
+
 fi
 dnf install git -y
 echo "git installed"
