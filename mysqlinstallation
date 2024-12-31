@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-dnf install mysql -y
+dnf install mysqll -y
 if [$? -ne 0] 
 then
 echo "Display :Mysql intsalled"
