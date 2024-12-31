@@ -1,7 +1,12 @@
 #!/bin/bash
-dnf install mysqll -y
+
+USERID=$(id)
+if[$USERID -ne 0]
+then
+echo "display the error command "
+fi
+    dnf install mysql -y
 if [$? -ne 0] 
 then
 echo "Display :Mysql intsalled"
-exit 1
 fi
