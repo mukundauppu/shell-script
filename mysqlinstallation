@@ -8,12 +8,16 @@ else
 echo "Display :Root id  Sucess"
 fi
 
-dnf install mysql -y
-if [ $? -ne 0 ] 
-then
-echo "Display :Mysql  installation Failure"
-exit 1
-else
+dnf list installed mysql
+if[ $? -ne 0]
+   then
+   dnf install mysql -y
+    if [ $? -ne 0 ] 
+    then
+    echo "Display :Mysql  installation Failure"
+    exit 1
+    fi
+    else
 echo "Display :Mysql installation Sucess"
 fi
 dnf install git -y
