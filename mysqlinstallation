@@ -4,7 +4,9 @@
 dnf install mysqll -y
 if [$? -ne 0] 
 then
-echo "Display :Mysql intsalled"
+echo "Display :Mysql  installation Failure"
+else
+echo "Display :Mysql installation Sucess"
 exit 1
 fi
 dnf install git -y
