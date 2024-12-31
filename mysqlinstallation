@@ -15,7 +15,12 @@ echo "Display :Mysql  installation Failure"
 exit 1
 else
 echo "Display :Mysql installation Sucess"
-
 fi
 dnf install git -y
-echo "git installed"
+if [ $? -ne 0 ]
+then 
+echo "Git Failure "
+exit 1
+else
+echo "Git successfull"
+fi
