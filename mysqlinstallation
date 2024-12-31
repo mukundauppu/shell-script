@@ -1,8 +1,7 @@
 #!/bin/bash
-dnf install mysql -y
+dnf install mysqll -y
 if [$? -ne 0] 
 then
 echo "Display :Mysql intsalled"
-else
-echo "Display :mysql not installed"
-Fi
+exit 1
+fi
