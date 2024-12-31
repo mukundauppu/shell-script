@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "display the $PWD"
+echo "Display the $HOME"
+echo "display the $USER"
+echo "Allvariables passed $@"
+echo "number of varaibles paased $#"
+echo "$0"
+echo "process id of the last script running in  background $!"
+echo "process id of the current script $$"
