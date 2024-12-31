@@ -1,5 +1,12 @@
 #!/bin/bash
-
+USERID=$(id)
+if [$USERID -ne 0] 
+then
+echo "Display :Root id  Failure"
+else
+echo "Display :Root id  Sucess"
+exit 1
+fi
 
 dnf install mysqll -y
 if [$? -ne 0] 
