@@ -1,0 +1,7 @@
+#!/bin/bash
+dnf install mysql -y
+if [$? -ne 0] 
+else 
+echo "Display :Mysql intsalled"
+exit 1
+fi
