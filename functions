@@ -1,12 +1,15 @@
 #!/bin/bash
 USERID=$(id -u)
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
 VALIDATE(){
     if [ $1 -ne 0 ] 
     then
-    echo "Display Failure :$2"
+    echo -e "$2.....$R FAILURE"
     exit 1
     else
-    echo "Display SUCCESS :$2"
+    echo -e "$2......$G SUCCESS"
     fi
 }
 if [ $USERID -ne 0 ] 
@@ -20,10 +23,10 @@ dnf install mysql -y
 VALIDATE $? "Inatlling mysql"
 if [ $? -ne 0 ] 
 then
-echo "Display :$2"
+echo -e "$2 FAILURE ..$R"
 exit 1
 else
-echo "MYSQL SUCESS"
+echo -e "$2 SUCCESS .. $G"
 fi
 dnf install git -y
 VALIDATE $? "Instlling Git"
