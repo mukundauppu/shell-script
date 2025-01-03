@@ -17,7 +17,7 @@ VALIDATE(){
     echo -e "$2......$G SUCCESS"
     fi
 }
-echo "script executed at : $TIMESTMP" &>>LOG_FILE
+echo "script executed at : $TIMESTMP" &>>LOGS_FILE_NAME
 if [ $USERID -ne 0 ] 
 then
 echo "Display :Root id  Failure"
@@ -25,7 +25,7 @@ exit 1
 else
 echo "Display :Root id  Sucess"
 fi
-dnf install mysql -y &>>LOG_FILE
+dnf install mysql -y &>>LOGS_FILE_NAME
 VALIDATE $? "Inatlling mysql"
 if [ $? -ne 0 ] 
 then
@@ -34,7 +34,7 @@ exit 1
 else
 echo -e "$2 SUCCESS .. $G"
 fi
-dnf install git -y &>>LOG_FILE
+dnf install git -y &>>LOGS_FILE_NAME
 VALIDATE $? "Instlling Git"
 if [ $? -ne 0 ]
 then 
