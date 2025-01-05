@@ -1,13 +1,13 @@
 #!/bin/bash
 USERID=$(sudo id -u)
-
+LOG_FILE="/var/log"
 if [ $USERID -ne 0 ]
 then
 echo "Root id :Failure"
 else
 echo "Root id :Success "
 fi
-dnf install mysql-server -y
+dnf install mysql-server -y &>>LOG_FILE
 if [ $? -ne 0 ]
 then
 echo "Install mysql server"
