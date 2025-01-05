@@ -1,0 +1,8 @@
+#!/bin/bash
+SOURCE=$(/root/applogs)
+FIND=$(find $SOURCE -name *.log -mtime +30 )
+
+while read -r file;
+do 
+echo $file
+done <<< $SOURCE

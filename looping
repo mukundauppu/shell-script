@@ -1,0 +1,8 @@
+#!/bin/bash
+SOURCE=$(/root/applogs)
+SOURCE_DELETE=$(find $SOURCE ".log" -mtime 14)
+file=$SOURCE_DELETE
+while read -r file
+do
+echo $file
+done <<<$file
