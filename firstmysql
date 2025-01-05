@@ -1,18 +1,8 @@
 #!/bin/bash
-LOGS="/var/tmp"
-VALIDATE()
-{
-dnf install mysql-server -y &>>LOGS
-if [ $? -eq 0 ]
+USERID=$(id -u)
+if [ $USERID -ne 0 ]
 then
-echo "mysql is installed"
-else
-echo "mysql is not installed"
+echo "You must have sudo access to this script"
+exit 1
 fi
-}
-
-systemctl enable mysqld
-VALIDATE $? "Enable mysqld"
-systemctl start  mysqld
-VALIDATE $? "Start mysqld"
 
