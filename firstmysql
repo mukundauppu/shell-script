@@ -1,18 +1,23 @@
 #!/bin/bash
 USERID=$(sudo id -u)
 LOG_FILE="/var/log"
+VALIDATE()
+{
 if [ $USERID -ne 0 ]
 then
 echo "Root id :Failure"
 else
 echo "Root id :Success "
 fi
-dnf install mysql-server -y &>>LOG_FILE 
+dnf install mysql-server -y 
 if [ $? -ne 0 ]
 then
 echo "Install mysql server"
 else
 echo "Mysql server not installed"
 fi
+}
 systemctl enable mysqld
+VALIDATE $? "Enable mysqld"
 systemctl start mysqld
+VALIDATE $? "Start mysqld"
