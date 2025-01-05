@@ -5,4 +5,17 @@ then
 echo "You must have sudo access to this script"
 exit 1
 fi
+dnf list installed mysql
+if [ $? -ne 0 ]
+then
+  dnf install mysql-server -y
+  if [ $? -ne 0 ]
+  then
+   echo "Mysql failed"
+   else 
+   echo "mysql success"
+   fi
+   else 
+   echo "Mysql already installed"
+fi
 
