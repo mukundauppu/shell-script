@@ -11,6 +11,7 @@ dnf install mysql-server -y
 if [ $? -ne 0]
 then
 echo "Install mysql server"
+exit 1
 else
 echo "Mysql server not installed"
 fi
