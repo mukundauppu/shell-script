@@ -1,14 +1,18 @@
 #!/bin/bash
-
-dnf install mysql-server -y
+LOGS="/var/tmp"
+VALIDATE()
+{
+dnf install mysql-server -y &>>LOGS
 if [ $? -eq 0 ]
 then
 echo "mysql is installed"
 else
 echo "mysql is not installed"
 fi
+}
 
 systemctl enable mysqld
-
-systemctl enable mysqld
+VALIDATE $? "Enable mysqld"
+systemctl start  mysqld
+VALIDATE $? "Start mysqld"
 
