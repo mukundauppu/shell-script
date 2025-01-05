@@ -1,9 +1,16 @@
 #!/bin/bash
 USERID=$(sudo id -u)
-Y="e\[33m"
+
 if [ $USERID -ne 0 ]
 then
 echo "Root id :Failure"
 else
-echo "Root id :Success $Y"
+echo "Root id :Success "
+fi
+dnf install mysql-server -y
+if [ $? -ne 0]
+then
+echo "Install mysql server"
+else
+echo "Mysql server not installed"
 fi
