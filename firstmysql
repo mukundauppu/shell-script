@@ -1,5 +1,5 @@
 #!/bin/bash
-Y="e\33[m"
+Y="e\[33m"
 USERID=$(sudo id -u)
 if [ $USERID -ne 0 ]
 then
