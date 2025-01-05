@@ -9,7 +9,7 @@ echo "Root id :Failure"
 else
 echo "Root id :Success "
 fi
-dnf install mysql-server -y 
+dnf install mysql-server -y
 if [ $? -ne 0 ]
 then
 echo "Install mysql server"
@@ -19,5 +19,5 @@ fi
 }
 systemctl enable mysqld
 VALIDATE $? "Enable mysqld"
-systemctl start mysqld
+systemctl enable mysqld
 VALIDATE $? "Start mysqld"
