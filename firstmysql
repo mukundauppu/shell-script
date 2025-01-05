@@ -8,10 +8,9 @@ else
 echo "Root id :Success "
 fi
 dnf install mysql-server -y
-if [ $1 -ne 0]
+if [ $? -ne 0 ]
 then
 echo "Install mysql server"
-exit 1
 else
 echo "Mysql server not installed"
 fi
