@@ -1,8 +1,9 @@
 #!/bin/bash
+Y="e\32[m"
 USERID=$(sudo id -u)
 if [ $USERID -ne 0 ]
 then
 echo "Root id :Failure"
 else
-echo "Root id :Success"
+echo "Root id :Success $Y"
 fi
