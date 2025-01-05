@@ -1,6 +1,6 @@
 #!/bin/bash
-Y="e\[33m"
 USERID=$(sudo id -u)
+Y="e\[33m"
 if [ $USERID -ne 0 ]
 then
 echo "Root id :Failure"
