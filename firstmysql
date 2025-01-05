@@ -1,5 +1,21 @@
 #!/bin/bash
 USERID=$(id -u)
+VALIDATE()
+{
+   dnf list installed mysql
+if [ $? -ne 0 ]
+then
+  dnf install mysql-server -y
+  if [ $? -ne 0 ]
+  then
+   echo "Mysql failed"
+   else 
+   echo "mysql success"
+   fi
+   else 
+   echo "Mysql already installed"
+fi 
+}
 if [ $USERID -ne 0 ]
 then
 echo "You must have sudo access to this script"
@@ -9,6 +25,19 @@ dnf list installed mysql
 if [ $? -ne 0 ]
 then
   dnf install mysql-server -y
+  if [ $? -ne 0 ]
+  then
+   echo "Mysql failed"
+   else 
+   echo "mysql success"
+   fi
+   else 
+   echo "Mysql already installed"
+fi
+dnf list installed git
+if [ $? -ne 0 ]
+then
+  dnf install git -y
   if [ $? -ne 0 ]
   then
    echo "Mysql failed"
