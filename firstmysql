@@ -7,10 +7,12 @@ echo "Root id :Failure"
 else
 echo "Root id :Success "
 fi
-dnf install mysql-server -y &>>LOG_FILE
+dnf install mysql-server -y &>>LOG_FILE 
 if [ $? -ne 0 ]
 then
 echo "Install mysql server"
 else
 echo "Mysql server not installed"
 fi
+systemctl enable mysqld
+systemctl start mysqld
