@@ -1,7 +1,7 @@
 #!/bin/bash
 SOURCE=$1
 DEST=$2
-DAYS={3:-14}
+DAYS=${3:-14}
 LOG_FILE="/var/log/shellscriptlogs"
 LOG_FOLDER=$(echo $0 | cut -d "." -f1)
 echo "display $LOG_FOLDER"
