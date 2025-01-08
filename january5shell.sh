@@ -42,7 +42,7 @@ if [ -n "$Files" ]
     echo "deleted $filepath" 
     done <<<$FILES
     else
-    echo "File to create zip files "
+    echo "=============== Failed to create zip file "
     exit 1
     fi
     else
