@@ -11,3 +11,26 @@ then
     fi
 echo "Mysql already installed :Skipped"
 fi
+
+cat mk
+mukunda
+kumar
+tack mk
+kumar 
+mukunda
+File=$(cat mk)
+echo "display the the content of the file $File"
+while read -r line
+do 
+echo $line
+done tac mk > hkfile
+mk
+mukunda
+kumar
+mk=$1
+hk=$2
+if [ $# -ne 2]
+then
+echo "usage $0 $mk $hk"
+exit 1
+
