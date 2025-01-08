@@ -19,3 +19,34 @@ if [ $# -lt 2 ]
 then
 echo USAGE
 fi
+if [ ! -d "$SOURCE" ] 
+    then
+    echo "Source files doesn't exit"
+    exit 1
+fi
+if [ ! -d "$DEST" ]
+    then
+    echo "Dest files doesn't exist"
+fi
+if [ -n "$Files"]
+    then
+    ZIP=$DEST/app-log-$TIMESTAMP.log
+    find $SOURCE -name "*.log" -mtime +$DAYS | zip -@ $Zip
+    if [ -f "$ZIP" ]
+    then
+    echo -e "please zip the file other than $DAYS"
+    while read -r filepath
+    do 
+    echo "Deleting the file $filepath"
+    rm -rf $filepath
+    echo "deleted $filepath" 
+    done <<<$FILES
+    else
+    echo "File to create zip files "
+    exit 1
+    fi
+    else
+    echo "No files found older than "
+fi
+
+
