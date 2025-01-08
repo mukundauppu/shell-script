@@ -28,7 +28,7 @@ if [ ! -d "$DEST" ]
     then
     echo "Dest files doesn't exist"
 fi
-if [ -n "$Files"]
+if [ -n "$Files" ]
     then
     ZIP=$DEST/app-log-$TIMESTAMP.log
     find $SOURCE -name "*.log" -mtime +$DAYS | zip -@ "$Zip"
