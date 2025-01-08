@@ -7,11 +7,10 @@ LOG_FOLDER=$(echo $0 | cut -d "." -f1)
 echo "display $LOG_FOLDER"
 TIMESTAMP=$(date +Y-%m-%d-%H-%M-%S)
 LOGS=$LOG_FILE/$LOG_FOLDER-$TIMESTAMP.log
-echo "$LOGS"
 Files=$(find $SOURCE -name "*.log" -mtime +$DAYS)
 USAGE()
 {
-    echo -e "January5shell.sh <SOURCE_DIR> <DES_DIR> <DAYS>"
+    echo -e "January5shell.sh <SOURCE_DIR> <DES_DIR> <DAYS>(optional)"
     exit 1
 }
 mkdir -p /home/ec2-user/shellscriptlogs
