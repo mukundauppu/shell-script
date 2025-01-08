@@ -31,7 +31,7 @@ fi
 if [ -n "$Files"]
     then
     ZIP=$DEST/app-log-$TIMESTAMP.log
-    find $SOURCE -name "*.log" -mtime +$DAYS | zip -@ $Zip
+    find $SOURCE -name "*.log" -mtime +$DAYS | zip -@ "$Zip"
     if [ -f "$ZIP" ]
     then
     echo -e "please zip the file other than $DAYS"
