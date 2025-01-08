@@ -28,7 +28,7 @@ if [ ! -d "$DEST" ]
 fi
 if [ -n "$Files" ]
     then
-    ZIP=$DEST/app-log-$TIMESTAMP.log
+    ZIP="$DEST/app-log-$TIMESTAMP.log"
     find $SOURCE -name "*.log" -mtime +$DAYS | zip -@ "$Zip"
     if [ -f "$ZIP" ]
     then
