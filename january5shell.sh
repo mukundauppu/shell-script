@@ -15,7 +15,7 @@ USAGE()
     exit 1
 }
 mkdir -p /home/ec2-user/shellscriptlogs
-if [ $# - lt 2 ]
+if [ $# -lt 2 ]
 then
 echo USAGE
 fi
