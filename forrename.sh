@@ -5,4 +5,4 @@ for in in $(!oldfile[@])
 do
 mv $oldfile1 $newfile1
 mv $oldfile2 $newfile2
-done 
+donne
