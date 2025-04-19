@@ -1,3 +1,9 @@
 #!/bin/bash
-mv file1.txt file3.txt
-mv file2.txt file4.txt
+ oldfile1= file1.txt
+ newfile1= newfile1.txt
+
+ oldfile2= file2.txt
+ newfile2= newfile2.txt
+ 
+ mv $oldfile1.txt $newfile1.txt
+ mv $oldfile2.txt $newfile2.txt
